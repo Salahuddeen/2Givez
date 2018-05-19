@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>2G!vez</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <style>
+        body{
+            background-color:#000000;
+        }
+       #map{
+            border: 4px solid #39e600;
+            margin-left: 170px;
+            width: 80%;
+            padding: 0px;
+            background-color: white;
+            position: fixed;
+        }
+        #jamaica{
+            
+            width: 490px;
+            height: 200px;
+            position: absolute;
+            left: 7%;
+            top: 120px;
+        }
+        #trinidad{
+           
+            width: 95px;
+            height: 90px;
+            position: absolute;
+            left: 84%;
+            top: 710px;
+        }
+        #haiti{
+            width: 95px;
+            height: 110px;
+            position: absolute;
+            left: 44%;
+            top: 280px;
+        }
+        #barbados{
+            
+            width: 50px;
+            height: 60px;
+            position: absolute;
+            left: 92%;
+            top: 610px;
+        }
+        #key{
+            border: 3px solid black;
+            width: 250px;
+            height:100px;
+            position: absolute;
+            left: 80%;
+            top: 50px;
+            color:lime;
+            visibility:hidden;
+
+        }
+        #g{
+            position: relative;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html"     style="margin-left: 20px;">
+                        <img src="images/logo-small.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="map.html">Map</a>
+                </li>
+                <li>
+                    <a href="donate.html">Donate</a>
+                </li>
+                <li>
+                    <a href="viewGardens.html">View Gardens</a>
+                </li>
+                <li>
+                    <a href="gardenBuilder.html">Build a Community Garden</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="services.html">Volunteer</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <!-- Menu Button do not change -->
+                <a href="#menu-toggle" id="menu-toggle"><i id="mooooo" class="fas fa-leaf" style="font-size:45;color:lime;"></i></a>
+
+                <div style="text-align:center;margin-left:auto;margin-right:auto;"> <button type="button" class="btn btn-success" onclick="showFa()">Show food availability</button>  </div>
+                    <br><br>
+                    <div id="map">
+                        <img src="images/map.png" height=800px width=100%>
+                        <div id="jamaica"> </div>
+                        <div id="trinidad"></div>
+                        <div id="haiti"> </div>
+                        <div id="barbados"></div>
+                        <div id="key"> <p> <span style="color:rgb(255, 0, 0)"> Red = Low food availability <span>  </br> <span style="color:yellow"> Yellow = Moderate food availability </span></br> <span style="color:green">Green = Sufficient food availability </span></p>
+                        </div>
+                    </div>
+
+                    <script>
+
+                            var faJamaica = 76;
+                            var faTrinidad = 89;
+                            var faHaiti = 49;
+                            var faBarbados = 88;
+
+                        function showFa(){
+                            document.getElementById("key").style.visibility = 'visible';
+                            if(faJamaica < 50){
+                                document.getElementById("jamaica").style.backgroundColor =  'rgba(0,255,0,0.3)';
+                                document.getElementById("jamaica").style.border = 'solid 2px red'
+                            }
+                            else if(faJamaica < 80){
+                                document.getElementById("jamaica").style.backgroundColor =  'rgba(255,255,0,0.3)';
+                                document.getElementById("jamaica").style.border = 'solid 2px yellow'
+                            }
+                            else{
+                                document.getElementById("jamaica").style.backgroundColor =  'rgba(0,255,0,0.3)'
+                                document.getElementById("jamaica").style.border = 'solid 2px green'
+                            }
+
+
+
+
+                            if(faTrinidad < 50){
+                                document.getElementById("trinidad").style.backgroundColor =     'rgba(0,255,0,0.3)';
+                                document.getElementById("trinidad").style.border = 'solid 2px red'
+                            }
+                            else if(faTrinidad < 80){
+                                document.getElementById("trinidad").style.backgroundColor =     'rgba(255,255,0,0.3)';
+                                document.getElementById("trinidad").style.border = 'solid 2px yellow'
+                            }
+                            else{
+                                document.getElementById("trinidad").style.backgroundColor =     'rgba(0,255,0,0.3)'
+                                document.getElementById("trinidad").style.border = 'solid 2px green'
+                            }
+                            
+
+
+
+                            if(faHaiti < 50){
+                                document.getElementById("haiti").style.backgroundColor =    'rgba(255, 0, 0, 0.4)';
+                                document.getElementById("haiti").style.border = 'solid 2px red'
+                            }
+                            else if(faHaiti < 80){
+                                document.getElementById("haiti").style.backgroundColor =    'rgba(255,255,0,0.3)';
+                                document.getElementById("haiti").style.border = 'solid 2px yellow'
+                            }
+                            else{
+                                document.getElementById("haiti").style.backgroundColor =    'rgba(0,255,0,0.3)'
+                                document.getElementById("haiti").style.border = 'solid 2px green'
+                            }
+
+
+
+
+                            if(faBarbados < 50){
+                                document.getElementById("barbados").style.backgroundColor =     'rgba(255, 0, 0, 0.4)';
+                                document.getElementById("barbados").style.border = 'solid 2px red'
+                            }
+                            else if(faBarbados < 80){
+                                document.getElementById("barbados").style.backgroundColor =     'rgba(255,255,0,0.3)';
+                                document.getElementById("barbados").style.border = 'solid 2px yellow'
+                            }
+                            else{
+                                document.getElementById("barbados").style.backgroundColor =     'rgba(0,255,0,0.3)'
+                                document.getElementById("barbados").style.border = 'solid 2px green'
+                            }
+                        }
+                    </script>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

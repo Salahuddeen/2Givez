@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>2G!vez</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+    <style>
+         #map {
+          height: 400px;
+          width: 80%;
+         }
+         body {
+            background-color:black;
+            color:lime;
+         }
+         #tool {
+            visibility: hidden;
+            position:absolute;
+         }
+         #seedsAmt{
+            visibility:hidden;
+            position:absolute;
+         }
+         #cash{
+            visibility:hidden;
+            position:absolute;
+         }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html"     style="margin-left: 20px;">
+                        <img src="images/logo-small.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="map.html">Map</a>
+                </li>
+                <li>
+                    <a href="donate.html">Donate</a>
+                </li>
+                <li>
+                    <a href="viewGardens.html">View Gardens</a>
+                </li>
+                <li>
+                    <a href="gardenBuilder.html">Build a Community Garden</a>
+                </li>
+                <li>
+                    <a href="services.html">Volunteer</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <a href="#menu-toggle" id="menu-toggle"><i id="mooooo" class="fas fa-leaf" style="font-size:45;color:lime;"></i></a>
+                
+               <div style="margin-top:10px;margin-left:auto;margin-right:auto; border: 4px solid lime;"id="map"></div>
+                
+                <div class="row">
+                    <div class="col">
+                    </div>
+                    <div class="col">    
+                        <form id="form1">
+                              <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                              </div>
+                              <div class="form-group">
+                                  <label for="countDrop">Country</label>
+                                  <select id="countDrop" class="form-control">
+                                     <option value="" disabled selected>Select your option</option>
+                                    <option value="TT">Trinidad and Tobago</option>
+                                    <option value="KN">St. Kitts and Nevis</option>
+                                    <option value="JM">Jamaica</option>
+                                    <option value="BD">Barbados</option>
+                                    <option value="HT">Haiti</option>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                  <label for="Garden">Garden</label>
+                                  <select id="gardens" class="form-control">
+                                  </select>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="example-datetime-local-input" class="col-2 col-form-label">Date</label>
+                                  <div class="col-10">
+                                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                                  </div>
+                                </div>
+                              <button class="btn btn-primary" type="submit">Complete Registration</button>
+
+                        </form>
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyDbivtxYpCJx-By_H0LJv5bnP8mwAqcdvU",
+              authDomain: "hackathondb-4e160.firebaseapp.com",
+              databaseURL: "https://hackathondb-4e160.firebaseio.com",
+              projectId: "hackathondb-4e160",
+              storageBucket: "",
+              messagingSenderId: "980574991002"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="js/map.js"></script>
+        <script src="js/main.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGGlEtNLzsrcRr1KgKDtThPpSQ6DqG5RM">
+        </script>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
